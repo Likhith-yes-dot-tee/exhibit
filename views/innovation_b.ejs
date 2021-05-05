@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<style>
+  .compatibility-message {
+      display: none;
+  }
+      @media (orientation: portrait) {
+      html, body {
+          overflow: hidden;
+          background-color: #000;
+          max-width: 100%;
+      }
+      .compatibility-message {
+          display: block ;
+          position: fixed;
+          z-index: 999999;
+          width: 100%;
+          height: 100%;
+          background: #13110e;
+          text-align: center;
+      }
+      
+  
+      .compatibility-message img {
+          max-width: 100%;
+      }
+  }
+
+/*------------hotsport css-----------------*/
+.hotspots{
+  width: 25px;
+  height: 25px;
+  background-color:#3AB3EF ;
+  border-radius: 50%;
+  position: absolute;
+  animation: wave 1s infinite;
+  cursor: pointer;
+}
+.invisaligng8{
+  right: 46.30%;
+  top: 46%;
+}
+.teensolution{
+  right: 25.50%;
+  bottom: 34%;
+}
+.hotspots::before{
+  content: attr(text);
+  width: max-content;
+  position: absolute;
+  background-color: #222222dd;
+  color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30px;
+  padding: 8px 20px;
+  font-size: 14px;
+  border-radius: 3px;
+  display: none;
+}
+
+.hotspots::after{
+  content: "";
+  border-color: transparent transparent #222222dd;
+  border-width: 0 8px 6px;
+  border-style: solid;
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.hotspots:hover::before,
+.hotspots:hover::after{
+  display: block;
+}
+@media (max-width: 768px) {
+  
+ 
+  .hotspots{
+    width: 12px;
+    height: 12px;
+  }
+  .teensolution{
+ 
+  bottom: 36%;
+}
+}
+/*------------hotsport css-----------------*/
+body {
+  position: fixed;
+  overflow: hidden; 
+  }
+  .back {
+        max-width: 40px;
+        top:10%;
+        left: 4%;
+        position: absolute;
+        cursor: pointer;
+      }
+</style>
+  
+</head>
+<body  >
+  <!----------------phone orintation-------------------->
+  <div class="compatibility-message" >
+    <img src="images/orintation.jpeg" alt="">
+  </div>
+
+  <!----------------phone orintation-------------------->
+  <!------Top navebar------->
+  <%- include('./top_nav'); %>
+
+  <!------Top navebar------->
+
+  <!---------------------landing-page--------------------------------->
+     <section>
+
+      <div class="landing">
+       
+        <img src="images/innovationbooth/innovationbooth.png" alt="" style="width: 100%; ">
+        <a href="/exhibition">  <img class="back" src="images/backbtn1.png" alt="" ></a>
+        <a href="dferg.html"><div class="hotspots invisaligng8" text="Invisalign G8"></div> </a>
+        <a data-toggle="modal" href="#myModal_pop"><div class="hotspots teensolution" text="Teen Solution"></div> </a>
+       
+    </div>
+    </section>
+  
+
+
+  <!---------------------landing-page end--------------------------------->
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal_pop" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">More details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <p>Speaker details</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+   <!------------------------ Modal end ----------------->
+   
+  <!------bottom navebar------->
+  <%- include('./bottom_nav'); %>
+ 
+  <!------bottom navebar------->
+
+
+
+ 
+   
+
+</body>
+</html>
